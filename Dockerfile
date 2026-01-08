@@ -29,6 +29,7 @@ COPY --from=builder /app/node_modules ./node_modules
 # 复制源代码
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/index.js ./
+COPY --from=builder /app/config.js ./
 COPY --from=builder /app/src ./src
 
 # 创建数据目录
