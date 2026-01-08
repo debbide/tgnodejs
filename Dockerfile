@@ -9,8 +9,8 @@ WORKDIR /app
 # 复制依赖文件
 COPY package*.json ./
 
-# 安装所有依赖（包括开发依赖用于编译）
-RUN npm ci --include=dev
+# 安装依赖并编译原生模块
+RUN npm install --build-from-source
 
 # 复制源代码
 COPY . .
