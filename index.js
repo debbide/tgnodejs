@@ -1,7 +1,5 @@
 // TG 多功能机器人入口
 
-const express = require('express');
-const path = require('path');
 const { validateConfig } = require('./src/config');
 const { initDatabase } = require('./src/db');
 const { bot } = require('./src/bot');
@@ -46,12 +44,6 @@ async function launchWithRetry(retries = 0) {
 async function main() {
     validateConfig();
     initDatabase();
-
-    // 启动 Express 静态文件服务
-    const app = express();
-    app.use(express.static(path.join(__dirname, 'public')));
-    app.get('/health', (req, res) => res.send('OK'));
-    app.listen(3000, () => console.log('🌐 Web 服务已启动: http://localhost:3000'));
 
     // 注册命令
     setupStartCommand(bot);
