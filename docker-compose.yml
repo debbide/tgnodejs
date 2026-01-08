@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  tgbot:
+    image: ghcr.io/debbide/tgnodejs:latest
+    container_name: tg-multi-bot
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - BOT_TOKEN=你的Bot_Token
+    volumes:
+      - ./data:/app/data
