@@ -9,5 +9,3 @@ services:
       - "3000:3000"
     environment:
       - BOT_TOKEN=你的Bot_Token
-    volumes:
-      - ./data:/app/data
