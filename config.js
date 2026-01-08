@@ -1,1 +1,41 @@
-function _0x5d36(_0x37ef2d,_0x596d9e){_0x37ef2d=_0x37ef2d-0x9a;var _0x580f3b=_0x580f();var _0x5d36c1=_0x580f3b[_0x37ef2d];return _0x5d36c1;}var _0x365edf=_0x5d36;(function(_0x387c94,_0x3315c4){var _0x5f59a1=_0x5d36,_0x2040de=_0x387c94();while(!![]){try{var _0x46634e=parseInt(_0x5f59a1(0x9a))/0x1*(-parseInt(_0x5f59a1(0xad))/0x2)+-parseInt(_0x5f59a1(0xaa))/0x3*(parseInt(_0x5f59a1(0xa0))/0x4)+parseInt(_0x5f59a1(0xa4))/0x5*(parseInt(_0x5f59a1(0xb1))/0x6)+parseInt(_0x5f59a1(0xa6))/0x7*(parseInt(_0x5f59a1(0xae))/0x8)+parseInt(_0x5f59a1(0x9e))/0x9+parseInt(_0x5f59a1(0x9d))/0xa*(-parseInt(_0x5f59a1(0xb0))/0xb)+-parseInt(_0x5f59a1(0xaf))/0xc*(-parseInt(_0x5f59a1(0xb2))/0xd);if(_0x46634e===_0x3315c4)break;else _0x2040de['push'](_0x2040de['shift']());}catch(_0x3567db){_0x2040de['push'](_0x2040de['shift']());}}}(_0x580f,0xadb50),module[_0x365edf(0xa5)]={'BOT_TOKEN':_0x365edf(0xb3)+_0x365edf(0xac)+_0x365edf(0xa8)+'jhYNIkFmmY'+_0x365edf(0x9b),'ADMIN_ID':'','TG_API_BASE':'','MAIL':{'HOST':_0x365edf(0xa1)+'.com','PORT':0x3e1,'USER':'','PASS':'','DIGEST_TIME':_0x365edf(0xab)},'DB_PATH':_0x365edf(0x9f)+'.db','OPENAI':{'API_BASE':_0x365edf(0xa7)+_0x365edf(0x9c)+_0x365edf(0xa2),'API_KEY':'','MODEL':_0x365edf(0xa9)+_0x365edf(0xa3)},'RSS':{'CHECK_INTERVAL':0x1e,'KEYWORDS':[],'EXCLUDE':[]},'FEATURES':{'TRANSLATE':!![],'QRCODE':!![],'SHORTEN':!![],'REMIND':!![],'NOTE':!![],'RSS':!![],'WEATHER':!![],'RATE':!![],'MAIL':![],'CHAT':!![]}});function _0x580f(){var _0xbf20e6=['1857DjZPdR','Ra5210','i.openai.c','1565390BwUcvh','11580741xCyWSa','./data/bot','11124eXuoCn','imap.gmail','om/v1','rbo','60MQcBGC','exports','21JhuxYU','https://ap','Hv_ChtpHGd','gpt-3.5-tu','369RNhZbS','08:00',':AAEMemq6j','746kdTuTd','9576gXuHjO','804CTHBRC','77xNWgVi','197922BWDooB','224263SBEZsa','6559498123'];_0x580f=function(){return _0xbf20e6;};return _0x580f();}
+// 配置文件 - 优先使用环境变量，否则使用默认值
+module.exports = {
+    BOT_TOKEN: process.env.BOT_TOKEN || '',
+    ADMIN_ID: process.env.ADMIN_ID || '',
+    TG_API_BASE: process.env.TG_API_BASE || '',
+
+    MAIL: {
+        HOST: process.env.MAIL_HOST || 'imap.gmail.com',
+        PORT: parseInt(process.env.MAIL_PORT) || 993,
+        USER: process.env.MAIL_USER || '',
+        PASS: process.env.MAIL_PASS || '',
+        DIGEST_TIME: process.env.MAIL_DIGEST_TIME || '08:00',
+    },
+
+    DB_PATH: process.env.DB_PATH || './data/bot.db',
+
+    OPENAI: {
+        API_BASE: process.env.OPENAI_API_BASE || 'https://api.openai.com/v1',
+        API_KEY: process.env.OPENAI_API_KEY || '',
+        MODEL: process.env.OPENAI_MODEL || 'gpt-3.5-turbo',
+    },
+
+    RSS: {
+        CHECK_INTERVAL: parseInt(process.env.RSS_CHECK_INTERVAL) || 30,
+        KEYWORDS: process.env.RSS_KEYWORDS ? process.env.RSS_KEYWORDS.split(',') : [],
+        EXCLUDE: process.env.RSS_EXCLUDE ? process.env.RSS_EXCLUDE.split(',') : [],
+    },
+
+    FEATURES: {
+        TRANSLATE: process.env.FEATURE_TRANSLATE !== 'false',
+        QRCODE: process.env.FEATURE_QRCODE !== 'false',
+        SHORTEN: process.env.FEATURE_SHORTEN !== 'false',
+        REMIND: process.env.FEATURE_REMIND !== 'false',
+        NOTE: process.env.FEATURE_NOTE !== 'false',
+        RSS: process.env.FEATURE_RSS !== 'false',
+        WEATHER: process.env.FEATURE_WEATHER !== 'false',
+        RATE: process.env.FEATURE_RATE !== 'false',
+        MAIL: process.env.FEATURE_MAIL === 'true',
+        CHAT: process.env.FEATURE_CHAT !== 'false',
+    },
+};
