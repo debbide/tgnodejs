@@ -33,10 +33,7 @@ COPY --from=builder /app/config.js ./
 COPY --from=builder /app/src ./src
 
 # 创建数据目录
-RUN mkdir -p /app/data && chown -R node:node /app
-
-# 使用非 root 用户
-USER node
+RUN mkdir -p /app/data
 
 # 设置环境变量
 ENV NODE_ENV=production
