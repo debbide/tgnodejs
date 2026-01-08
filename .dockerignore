@@ -6,7 +6,6 @@ node_modules/
 .gitignore
 
 # 配置文件（敏感信息）
-config.js
 .env
 .env.*
 !.env.example
