@@ -1,0 +1,30 @@
+# 依赖
+node_modules/
+
+# Git
+.git/
+.gitignore
+
+# 配置文件（敏感信息）
+config.js
+.env
+.env.*
+!.env.example
+
+# 数据文件
+data/*.db
+*.log
+
+# 开发文件
+*.md
+.vscode/
+.idea/
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# 其他
+*.egg-*.json
+egg-tgbot.json
